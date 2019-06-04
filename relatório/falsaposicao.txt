@@ -1,0 +1,34 @@
+O método da falsa funciona da mesma maneira que o método da secante. A única modificação é que ele inclui um teste que garante que a aproximação gerada não extrapolará o intervalo definido em cada iteração. O método da falsa posição geralmente não é indicado para fins práticos, pois sua maior segurança faz com que sejam necessários mais iterações que no método da secante. Entratanto, o apresentamos com fins teóricos, para ilustrar como podemos delimitar o intervalo no qual a solução aproximada será gerada.
+
+\begin{algorithm}[H]
+  \caption{Método da falsa posição}
+  \begin{algorithmic}[1]
+   \Require Função $f$; Aproximações inicial $p_0$ e $p_1$; Tolerância $TOL \in \R$; Número máximo de iterações $N \in \Z$.
+   \Ensure Solução aproximada $p$ ou erro, onde $f(p) = 0$.
+   \Function{Falsa-Posição}{$f, p_0, p_1, TOL, N $} 
+    \State $i=2$
+    \State $q_0 = f(p_0)$
+    \State $q_1 = f(p_1)$
+    \While{$i \leq N$}
+      \State $p = p_1 - q_1(p_1 - p_0)/(q_1 - q_0)$
+      
+      \If{$|p - p_1| < TOL$}
+	\State \Return $p$
+      \EndIf
+      
+      \State $q = f(p)$
+
+      \If{$q \cdot q_1 < 0$}
+	\State $p_0 = p_1$
+      	\State $q_0 = q_1$
+      \EndIf
+      \State $p_1 = p$
+      \State $q_1 = q$
+      
+      \State $i = i+1$
+    \EndWhile
+    \State \Return {\sc Erro}
+   \EndFunction
+  \end{algorithmic}
+ \end{algorithm}
+

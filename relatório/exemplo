@@ -1,0 +1,17 @@
+\[f(x) = x^2 - 2'-2\]
+
+$tol = 0.001 
+N = 20
+
+Método da Bisseção:
+
+$a = -5$, $b = 5$
+
+Solucao encontrada em 13 iteracoes: $x = -1.414185$
+
+Método de Newton-Raphson:
+
+$p_0 = 5$
+
+Solucao encontrada em 4 iteracoes: $x = 1.414214$
+

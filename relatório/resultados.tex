@@ -1,0 +1,21 @@
+#Bisseção
+
+\begin{teo}[Teorema do Valor Intermediário]
+Se $f \in C[a, b]$ e $f(a) \leq k \leq f(b)$, então existe $c \in (a, b)$ para o qual \[f(c) = K\text{.}\]
+\end{teo}
+
+#Newtown Raphson
+
+\begin{teo}
+Seja $f: \R \Longrightarrow \R$ com derivadas contínuas até ordem $n$: \[f(x+h) = f(x) + hf'(x) + \frac{h^2}{2\!}f'(x) + \cdots + \frac{h^n}{n\!}f^n(x) + R_n\text{,}\] onde $h = x_n - x_{n-1}$ e \[R_n = \frac{h^{n+1}}{(n+1)\!}f^{n-1}(\xi)] para algum $\xi \in [x, x+h]$.
+\end{teo}
+
+Logo, se $x_{n} = x_{n-1} + \alpha$ e $f(x_{n-1} + \alpha)$ = 0$, então
+\begin{eqnarray*}
+	0 & = & f(x_{n-1} + \alpha) = f(x_{n-1}) + \alpha f'(x_{n-1}) + \frac{alpha^2}{2}f''(x_{n-1}) + \cdots\\
+	0 & = & f(x_{n-1} + \alpha) \approx f(x_{n-1}) + \alpha f'(x_{n-1})\text{.}
+\end{eqnarray*}
+
+Portanto, \[\alpha \approx - \frac{f(x_{n-1})}{f'(x_{n-1})} \implies x_{n} \approx x_{n-1} - \frac{f(x_{n-1})}{f'(x_{n-1})}\text{.}\]
+
+
